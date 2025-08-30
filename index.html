@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Royale 254 Beauty & Barber Lounge</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts - Updated for luxury feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --mahogany: #4E342E;          /* Deep mahogany brown */
+      --terracotta: #A65C32;        /* Warm terracotta */
+      --sage: #8A9A5B;              /* Muted sage green */
+      --moss: #657153;              /* Earthy moss green */
+      --cream: #F8F4E9;             /* Soft cream/neutral */
+      --pale-sage: #CBD5C0;         /* Light sage for backgrounds */
+      --gold: #C6A969;              /* Muted gold accent */
+      --dark-charcoal: #2E2E2E;     /* Deep neutral */
+      --white: #FFFFFF;             /* Clean white */
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cream);
+      color: var(--dark-charcoal);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      padding-top: 80px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--terracotta);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--mahogany);
+    }
+
+    /* Navbar - Enhanced with new color scheme */
+    .navbar {
+      background: rgba(248, 244, 233, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      transition: all 0.4s ease;
+      box-shadow: 0 2px 15px rgba(78, 52, 46, 0.1);
+    }
+
+    .navbar.scrolled {
+      padding: 10px 0;
+      background: rgba(248, 244, 233, 0.98);
+      box-shadow: 0 4px 20px rgba(78, 52, 46, 0.15);
+    }
+
+    /* Navbar Brand - Enhanced typography */
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--mahogany) !important;
+      letter-spacing: 1px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand::before {
+      /* content: ""; */
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--moss) 100%);
+      border-radius: 50%;
+      margin-right: 10px;
+      box-shadow: 0 0 0 3px var(--gold);
+    }
+
+    .navbar-brand span {
+      color: var(--terracotta);
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* Navbar Links */
+    .nav-link {
+      color: var(--mahogany) !important;
+      font-weight: 500;
+      margin: 0 8px;
+      position: relative;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--terracotta);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::before {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--terracotta) !important;
+    }
+
+    /* Hero Section - Updated with new color scheme */
+    .hero {
+      background: linear-gradient(
+          rgba(166, 92, 50, 0.7),   /* Terracotta overlay */
+          rgba(78, 52, 46, 0.7)     /* Mahogany overlay */
+        ),
+        url('/images/Lucid_Origin_A_serene_sunlit_wellness_center_A_black_woman_lie_1.jpg') 
+        center/cover no-repeat;
+      height: 100vh;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: var(--cream);
+    }
+    
+    .btn-custom {
+      background-color: var(--sage);
+      border: none;
+      color: var(--cream);
+      padding: 14px 35px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn-custom:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: var(--terracotta);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+    
+    .btn-custom:hover:before {
+      width: 100%;
+    }
+    
+    .btn-custom:hover {
+      color: var(--cream);
+      box-shadow: 0 0 20px rgba(166, 92, 50, 0.5);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      color: var(--mahogany);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    
+    .section-header h2:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--terracotta);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .section-header p {
+      color: var(--dark-charcoal);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Services */
+    .service-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(78, 52, 46, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      background-color: var(--white);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(78, 52, 46, 0.15);
+    }
+    
+    .service-card img {
+      border-radius: 12px 12px 0 0;
+      transition: all 0.5s ease;
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .service-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .service-card .card-body {
+      padding: 25px;
+    }
+    
+    .service-card .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--mahogany);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--terracotta);
+      margin-bottom: 15px;
+    }
+
+    /* Gallery */
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .gallery-item img {
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(166, 92, 50, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-overlay i {
+      color: var(--cream);
+      font-size: 2.5rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(78, 52, 46, 0.08);
+      padding: 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      margin-top: 30px;
+    }
+    
+    .testimonial-card:before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-size: 6rem;
+      color: var(--terracotta);
+      opacity: 0.2;
+      line-height: 1;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(78, 52, 46, 0.15);
+    }
+    
+    .testimonial-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+      border: 3px solid var(--terracotta);
+    }
+    
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .testimonial-rating {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    /* Booking Form */
+    .booking-form {
+      background: var(--pale-sage);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(78, 52, 46, 0.1);
+    }
+    
+    .form-control {
+      padding: 12px 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 0.25rem rgba(166, 92, 50, 0.25);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--mahogany) 0%, var(--dark-charcoal) 100%);
+      color: var(--cream);
+      padding: 60px 0 30px;
+    }
+    
+    .footer-links h5 {
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+      padding-left: 5px;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: var(--cream);
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--terracotta);
+      color: var(--cream);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--terracotta);
+      color: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--sage);
+      transform: translateY(-5px);
+    }
+
+    /* Barber Specific Styles */
+    .barber-service {
+      border-left: 4px solid var(--terracotta);
+    }
+    
+    .service-tabs {
+      margin-bottom: 30px;
+    }
+    
+    .service-tabs .nav-link {
+      color: var(--mahogany) !important;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 10px 20px;
+      font-weight: 600;
+    }
+    
+    .service-tabs .nav-link.active {
+      color: var(--terracotta) !important;
+      border-bottom: 2px solid var(--terracotta);
+    }
+
+    /* Massage Hero - Updated with new color scheme */
+    .massage-hero {
+      background: linear-gradient(
+          rgba(138, 154, 91, 0.8),   /* Sage Green overlay */
+          rgba(101, 113, 83, 0.8)    /* Moss Green overlay */
+        ),
+        url('https://images.unsplash.com/photo-1544168212-5c5a5a5b5b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWFzc2FnZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1600&q=80') 
+        center/cover no-repeat;
+      padding: 100px 0;
+      color: var(--cream);
+      text-align: center;
+    }
+
+    /* Massage Benefits Section */
+    .massage-benefits {
+      background-color: var(--cream);
+      padding: 80px 0;
+    }
+
+    /* Benefit Card */
+    .benefit-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(78, 52, 46, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(78, 52, 46, 0.15);
+    }
+
+    /* Icons */
+    .benefit-icon {
+      font-size: 2.5rem;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Wood texture elements */
+    .wood-texture {
+      background-image: url('https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29vZCUyMHRleHR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    
+    /* New Features */
+    
+    /* Floating Booking Widget */
+    .floating-booking {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 1000;
+      background: var(--terracotta);
+      color: var(--cream);
+      border-radius: 50px;
+      padding: 15px 25px;
+      box-shadow: 0 5px 15px rgba(78, 52, 46, 0.2);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .floating-booking:hover {
+      background: var(--mahogany);
+      color: var(--cream);
+      transform: translateY(-5px);
+    }
+    
+    /* Service Counter */
+    .counter-section {
+      background: linear-gradient(135deg, var(--mahogany) 0%, var(--dark-charcoal) 100%);
+      padding: 60px 0;
+      color: var(--cream);
+    }
+    
+    .counter-item {
+      text-align: center;
+    }
+    
+    .counter-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    
+    /* Team Section */
+    .team-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(78, 52, 46, 0.08);
+      transition: all 0.4s ease;
+    }
+    
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(78, 52, 46, 0.15);
+    }
+    
+    .team-img {
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .team-social {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      background: rgba(166, 92, 50, 0.8);
+      padding: 15px;
+      transition: all 0.4s ease;
+      opacity: 0;
+    }
+    
+    .team-card:hover .team-social {
+      bottom: 0;
+      opacity: 1;
+    }
+    
+    /* Promotional Banner */
+    .promo-banner {
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--gold) 100%);
+      padding: 30px 0;
+      text-align: center;
+      color: var(--cream);
+    }
+    
+    /* Loading Animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid var(--pale-sage);
+      border-top: 5px solid var(--terracotta);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* New: Logo styling for brand identity */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--moss) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      box-shadow: 0 0 0 3px var(--gold);
+    }
+    
+    .logo-symbol::after {
+      content: "LR";
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    
+    /* New: Enhanced typography hierarchy */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--mahogany);
+    }
+    
+    /* New: Subtle texture overlay for sections */
+    .textured-bg {
+      position: relative;
+    }
+    
+    .textured-bg::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a65c32' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Floating Booking Widget -->
+  <a href="#booking" class="floating-booking">
+    <i class="fas fa-calendar-check me-2"></i> Book Now
+  </a>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="logo-container">
+          <div class="logo-symbol"></div>
+          <span>Luxury <span>Royale 254</span></span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color: var(--mahogany);"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#massage">Massage</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#booking">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+      <h1>Luxury Royale 254 Beauty & Barber Lounge</h1>
+      <p>Luxury Salon | Spa | Barber | Nails | Massage</p>
+      <a href="#booking" class="btn btn-custom mt-3">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- Promotional Banner -->
+  <div class="promo-banner" data-aos="fade">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h4 class="mb-0">Special Offer: Get 20% off your first massage treatment!</h4>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a href="#booking" class="btn btn-dark">Claim Offer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right">
+          <img src="/images/Lucid_Origin_A_serene_sunlit_wellness_center_A_black_woman_lie_1.jpg" class="img-fluid rounded-3 shadow" alt="Salon">
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="ps-md-4">
+            <div class="section-header text-start">
+              <h2>About Us</h2>
+            </div>
+            <p>At Luxury Royale 254 Beauty & Barber Lounge, we redefine luxury beauty and grooming experiences. From spa therapies to precision barber services, nail treatments and massages, our mission is to provide an unforgettable experience where elegance meets comfort.</p>
+            <p>Located in the heart of Nairobi, we combine professionalism with a warm, welcoming ambiance. Our expert team is dedicated to helping you look and feel your best.</p>
+            <div class="mt-4">
+              <div class="d-flex mb-3">
+                <div class="me-4">
+                  <i class="fas fa-spa fa-2x" style="color: var(--gold);"></i>
+                </div>
+                <div>
+                  <h5>Premium Products</h5>
+                  <p>We use only the highest quality products for all our services</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="me-4">
+                  <i class="fas fa-users fa-2x" style="color: var(--gold);"></i>
+                </div>
+                <div>
+                  <h5>Expert Team</h5>
+                  <p>Our professionals are trained and certified in the latest techniques</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counter Section -->
+  <section class="counter-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="counter-item">
+            <div class="counter-number" data-count="30">0</div>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="counter-item">
+            <div class="counter-number" data-count="20">0</div>
+            <p>Services Offered</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="counter-item">
+            <div class="counter-number" data-count="4">0</div>
+            <p>Expert Staff</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="counter-item">
+            <div class="counter-number" data-count="98">0</div>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container py-5">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Our Services</h2>
+        <p>Experience beauty and grooming excellence with our premium services</p>
+      </div>
+
+      <ul class="nav nav-pills service-tabs justify-content-center mb-5" data-aos="fade-up">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="pill" href="#beauty">Beauty Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#barber">Barber Services</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Beauty Services -->
+        <div id="beauty" class="tab-pane active">
+          <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card service-card">
+                <img src="/images/braids luxury royale.jpg" class="card-img-top" alt="Spa">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-spa"></i>
+                  </div>
+                  <h5 class="card-title">Braiding Therapy</h5>
+                  <p class="card-text">Enhance your beauty and confidence with our expert braiding styles, crafted to protect, define, and refresh your look.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card service-card">
+                <img src="/images/Lucid_Origin_Hyperrealistic_closeup_of_a_glamorous_African_wom_2 (1).jpg" class="card-img-top" alt="Nails">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                  </div>
+                  <h5 class="card-title">Manicure & Pedicure</h5>
+                  <p class="card-text">Elegant nail care services to keep you polished and stylish with long-lasting results.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card service-card">
+                <img src="/images/Lucid_Origin_A_serene_sunlit_wellness_center_A_black_woman_lie_1.jpg" class="card-img-top" alt="Massage">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-massage"></i>
+                  </div>
+                  <h5 class="card-title">Massage</h5>
+                  <p class="card-text">Indulge in soothing massages designed to melt away stress and tension from your body.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+        <div id="beauty" class="tab-pane active">
+          <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card service-card">
+                <img src="/images/waxinga@royale.jpg" class="card-img-top" alt="Spa">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-spa"></i>
+                  </div>
+                  <h5 class="card-title">Flawless Waxing</h5>
+                  <p class="card-text">Say goodbye to unwanted hair with our caring waxing services, leaving your skin fresh and glowing.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card service-card">
+                <img src="/images/luxury royale makeup.jpg" class="card-img-top" alt="Nails">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                  </div>
+                  <h5 class="card-title">Full Face Makeup</h5>
+                  <p class="card-text">Professional makeup artistry to highlight your beauty with flawless, long-lasting glam for any occasion.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card service-card">
+                <img src="/images/royale lash.jpg" class="card-img-top" alt="Massage">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-massage"></i>
+                  </div>
+                  <h5 class="card-title">Lash Installation</h5>
+                  <p class="card-text">Brighten your look with lashes made just for you — soft, natural, and comfortable, so you feel confident every day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+        <!-- Barber Services -->
+        <div id="barber" class="tab-pane fade">
+          <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card service-card barber-service">
+                <img src="/images/Lucid_Origin_A_hyperrealistic_highresolution_photograph_of_a_c_2.jpg" class="card-img-top" alt="Haircut">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-cut"></i>
+                  </div>
+                  <h5 class="card-title">Precision Haircut</h5>
+                  <p class="card-text">Expert haircuts tailored to your style and preferences with meticulous attention to detail.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card service-card barber-service">
+                <img src="/images/beardgrooming@royale.jpg" class="card-img-top" alt="Beard Trim">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-air-freshener"></i>
+                  </div>
+                  <h5 class="card-title">Beard Grooming</h5>
+                  <p class="card-text">Professional beard trimming, shaping, and conditioning for a sharp, well-groomed look.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card service-card barber-service">
+                <img src="/images/Lucid_Origin_A_luxurious_traditional_barbershop_scene_with_ric_3.jpg" class="card-img-top" alt="Hot Towel Shave">
+                <div class="card-body text-center">
+                  <div class="service-icon">
+                    <i class="fas fa-fire"></i>
+                  </div>
+                  <h5 class="card-title">Hot Towel Shave</h5>
+                  <p class="card-text">Traditional hot towel shave with premium products for the ultimate grooming experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-5">
+    <div class="container py-5">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Meet Our Experts</h2>
+        <p>Our skilled professionals are dedicated to making you look and feel your best</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-card">
+            <img src="/images/team1.jpg" class="team-img w-100" alt="Beauty Specialist">
+            <div class="card-body text-center">
+              <h5>Sarah Johnson</h5>
+              <p class="text-muted">Senior Beauty Therapist</p>
+            </div>
+            <div class="team-social text-center">
+              <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-light mx-2"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-card">
+            <img src="/images/team2.jpg" class="team-img w-100" alt="Barber">
+            <div class="card-body text-center">
+              <h5>Michael Otieno</h5>
+              <p class="text-muted">Master Barber</p>
+            </div>
+            <div class="team-social text-center">
+              <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-light mx-2"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-card">
+            <img src="/images/team3.jpg" class="team-img w-100" alt="Massage Therapist">
+            <div class="card-body text-center">
+              <h5>Grace Wanjiku</h5>
+              <p class="text-muted">Massage Specialist</p>
+            </div>
+            <div class="team-social text-center">
+              <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-light mx-2"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Massage Section -->
+  <section id="massage" class="massage-hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <h2 class="display-4 fw-bold">Premium Massage Therapy</h2>
+          <p class="lead">Experience the healing power of touch with our specialized massage treatments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="massage-benefits">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Our Massage Services</h2>
+        <p>Relax, rejuvenate and restore with our therapeutic massage treatments</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card service-card">
+            <img src="/images/swedishmassage@royale.jpg" class="card-img-top" alt="Swedish Massage">
+            <div class="card-body text-center">
+              <div class="service-icon">
+                <i class="fas fa-spa"></i>
+              </div>
+              <h5 class="card-title">Swedish Massage</h5>
+              <p class="card-text">A gentle, relaxing massage that promotes overall relaxation and improves circulation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card service-card">
+            <img src="/images/deeptissuemassage@royale.jpg" class="card-img-top" alt="Deep Tissue Massage">
+            <div class="card-body text-center">
+              <div class="service-icon">
+                <i class="fas fa-hand-rock"></i>
+              </div>
+              <h5 class="card-title">Deep Tissue Massage</h5>
+              <p class="card-text">Targets deeper layers of muscle and connective tissue to relieve chronic pain and tension.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card service-card">
+            <img src="/images/aromatherapy@royale.jpg" class="card-img-top" alt="Aromatherapy Massage">
+            <div class="card-body text-center">
+              <div class="service-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h5 class="card-title">Aromatherapy Massage</h5>
+              <p class="card-text">Combines soft, gentle pressure with the use of essential oils for enhanced relaxation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wood-texture my-5" data-aos="fade"></div>
+
+      <div class="section-header mt-5" data-aos="fade-up">
+        <h2>Benefits of Massage</h2>
+        <p>Regular massage therapy offers numerous health benefits</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h5>Reduces Stress</h5>
+            <p>Massage therapy is known to decrease cortisol levels and promote relaxation.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-tint"></i>
+            </div>
+            <h5>Improves Circulation</h5>
+            <p>Enhances blood flow, delivering oxygen and nutrients to muscle cells.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-bed"></i>
+            </div>
+            <h5>Promotes Better Sleep</h5>
+            <p>Helps those who struggle with insomnia by promoting relaxation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-5">
+    <div class="container py-5">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Our Gallery</h2>
+        <p>Take a look at our work and luxurious facility</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="gallery-item">
+            <img src="/images/Lucid_Origin_Hyperrealistic_closeup_of_a_glamorous_African_wom_2 (1).jpg" class="img-fluid">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="gallery-item">
+            <img src="/images/braids luxury royale.jpg" class="img-fluid">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="gallery-item">
+            <img src="/images/Lucid_Origin_A_serene_sunlit_wellness_center_A_black_woman_lie_1.jpg" class="img-fluid">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-item">
+            <img src="/images/Lucid_Origin_A_hyperrealistic_highresolution_photograph_captur_0.jpg" class="img-fluid">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="gallery-item">
+            <img src="/images/Flux_Dev_A_photorealistic_image_of_a_young_Black_woman_relaxin_0.jpg" class="img-fluid">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+          <div class="gallery-item">
+            <img src="/images/Lucid_Origin_A_hyperrealistic_highresolution_photograph_of_a_c_2.jpg" class="img-fluid">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="py-5 bg-light">
+    <div class="container py-5">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Book an Appointment</h2>
+        <p>Reserve your slot for a premium beauty or barber experience</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="booking-form" data-aos="fade-up" data-aos-delay="100">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+              <div class="col-md-6">
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select" required>
+                  <option selected disabled>Service Type</option>
+                  <option>Beauty Services</option>
+                  <option>Barber Services</option>
+                  <option>Massage Services</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select" required>
+                  <option selected disabled>Choose Service</option>
+                  <option>Braiding</option>
+                  <option>Facial</option>
+                  <option>Spa Therapy</option>
+                  <option>Lash Installation</option>
+                  <option>Swedish Massage</option>
+                  <option>Deep Tissue Massage</option>
+                  <option>Aromatherapy Massage</option>
+                  <option>Manicure & Pedicure</option>
+                  <option>Precision Haircut</option>
+                  <option>Beard Grooming</option>
+                  <option>Hot Towel Shave</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" rows="4" placeholder="Special Requests"></textarea>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-custom">Confirm Booking</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-5">
+    <div class="container py-5">
+      <div class="section-header" data-aos="fade-up">
+        <h2>What Our Clients Say</h2>
+        <p>Hear from our satisfied customers about their experiences</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"The spa experience was heavenly! I felt so relaxed and pampered. The ambiance and service were exceptional. Definitely coming back."</p>
+            <div class="d-flex align-items-center mt-4">
+              <div class="testimonial-avatar">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client">
+              </div>
+              <div>
+                <strong>Michelle W.</strong>
+                <p class="mb-0">Nairobi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Best massage I've ever had! The therapist was incredibly skilled and the ambiance was so relaxing. I left feeling completely renewed."</p>
+            <div class="d-flex align-items-center mt-4">
+              <div class="testimonial-avatar">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client">
+              </div>
+              <div>
+                <strong>Sarah K.</strong>
+                <p class="mb-0">Westlands</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>"I booked a massage session and it was worth every coin. The therapist was professional and the facility was clean and luxurious. Highly recommend Luxury Royale 254."</p>
+            <div class="d-flex align-items-center mt-4">
+              <div class="testimonial-avatar">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+              </div>
+              <div>
+                <strong>Janet M.</strong>
+                <p class="mb-0">Kilimani</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container py-5">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Get In Touch</h2>
+        <p>Reach us for bookings, inquiries, or collaborations</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="contact-info">
+                <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: var(--gold);"></i>
+                <h5>Location</h5>
+                <p>Nairobi, Kenya</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info">
+                <i class="fas fa-phone fa-2x mb-3" style="color: var(--gold);"></i>
+                <h5>Phone</h5>
+                <p>+254 759 288 881</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info">
+                <i class="fas fa-envelope fa-2x mb-3" style="color: var(--gold);"></i>
+                <h5>Email</h5>
+                <p>info@luxuryroyale254.com</p>
+              </div>
+            </div>
+          </div>
+          <a href="mailto:info@luxuryroyale254.com" class="btn btn-custom mt-5">Send Us a Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="footer-brand">Luxury <span>Royale 254</span></h3>
+          <p class="mt-3">Luxury Beauty & Barber Lounge offering premium services in a sophisticated environment.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Spa Therapy</a></li>
+            <li><a href="#massage">Massage</a></li>
+            <li><a href="#services">Nail Care</a></li>
+            <li><a href="#services">Barber Services</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Opening Hours</h5>
+          <ul>
+            <li>Monday - Friday: 9:00 AM - 8:00 PM</li>
+            <li>Saturday: 10:00 AM - 6:00 PM</li>
+            <li>Sunday: 11:00 AM - 4:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Luxury Royale 254 Beauty & Barber Lounge | Designed with ♥ in Nairobi</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        document.querySelector('.navbar').classList.add('scrolled');
+      } else {
+        document.querySelector('.navbar').classList.remove('scrolled');
+      }
+    });
+
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('active');
+      } else {
+        backToTopButton.classList.remove('active');
+      }
+    });
+
+    // Smooth scrolling for navbar links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your booking! We will confirm your appointment shortly.');
+      this.reset();
+    });
+    
+    // Counter animation
+    function animateCounter() {
+      const counters = document.querySelectorAll('.counter-number');
+      const speed = 200;
+      
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+        
+        if (count < target) {
+          counter.innerText = Math.min(count + increment, target);
+          setTimeout(animateCounter, 1);
+        }
+      });
+    }
+    
+    // Loading animation
+    window.addEventListener('load', function() {
+      document.querySelector('.loader').style.opacity = '0';
+      setTimeout(() => {
+        document.querySelector('.loader').style.display = 'none';
+        animateCounter();
+      }, 500);
+    });
+  </script>
+</body>
+</html>
