@@ -798,7 +798,7 @@ background: linear-gradient(
             <div class="section-header text-start">
               <h2>About Us</h2>
             </div>
-            <p>At Luxury Royale 254 Beauty & Barber Lounge, we redefine luxury beauty and grooming experiences. From spa therapies to precision barber services, nail treatments and massages, our mission is to provide an unforgettable experience where elegance meets comfort.</p>
+            <p>At Luxe Royale 254 Beauty & Barber Lounge, we redefine luxury beauty and grooming experiences. From spa therapies to precision barber services, nail treatments and massages, our mission is to provide an unforgettable experience where elegance meets comfort.</p>
             <p>Located in the heart of Nairobi, we combine professionalism with a warm, welcoming ambiance. Our expert team is dedicated to helping you look and feel your best.</p>
             <div class="mt-4">
               <div class="d-flex mb-3">
@@ -1217,66 +1217,94 @@ background: linear-gradient(
       </div>
     </div>
   </section>
-
+  
   <!-- Booking -->
-  <section id="booking" class="py-5 bg-light">
-    <div class="container py-5">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Book an Appointment</h2>
-        <p>Reserve your slot for a premium beauty or barber experience</p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="booking-form" data-aos="fade-up" data-aos-delay="100">
-            <form class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Full Name" required>
-              </div>
-              <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Email" required>
-              </div>
-              <div class="col-md-6">
-                <input type="tel" class="form-control" placeholder="Phone Number" required>
-              </div>
-              <div class="col-md-6">
-                <input type="date" class="form-control" required>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select" required>
-                  <option selected disabled>Service Type</option>
-                  <option>Beauty Services</option>
-                  <option>Barber Services</option>
-                  <option>Massage Services</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select" required>
-                  <option selected disabled>Choose Service</option>
-                  <option>Braiding</option>
-                  <option>Facial</option>
-                  <option>Spa Therapy</option>
-                  <option>Lash Installation</option>
-                  <option>Swedish Massage</option>
-                  <option>Deep Tissue Massage</option>
-                  <option>Aromatherapy Massage</option>
-                  <option>Manicure & Pedicure</option>
-                  <option>Precision Haircut</option>
-                  <option>Beard Grooming</option>
-                  <option>Hot Towel Shave</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <textarea class="form-control" rows="4" placeholder="Special Requests"></textarea>
-              </div>
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-custom">Confirm Booking</button>
-              </div>
-            </form>
-          </div>
+<section id="booking" class="py-5 bg-light">
+  <div class="container py-5">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Book an Appointment</h2>
+      <p>Reserve your slot for a premium beauty or barber experience</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="booking-form" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Integrated Web3Forms -->
+          <form id="bookingForm" class="row g-3" action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Your Access Key -->
+            <input type="hidden" name="access_key" value="bf92cd55-ad5a-478e-8924-e24400ed11f2">
+
+            <!-- Email subject + from name -->
+            <input type="hidden" name="subject" value="New Booking Request - Luxe Royale Beauty & Barber Lounge">
+            <input type="hidden" name="from_name" value="Luxe Royale Beauty & Barber Lounge">
+
+            <!-- Customer Info -->
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="customer_name" placeholder="Full Name" required>
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="customer_email" placeholder="Email" required>
+            </div>
+
+            <div class="col-md-6">
+              <input type="tel" class="form-control" name="customer_phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="col-md-6">
+              <input type="date" class="form-control" name="appointment_date" required>
+            </div>
+
+            <!-- Service Details -->
+            <div class="col-md-6">
+              <select class="form-select" name="service_category" required>
+                <option selected disabled>Service Type</option>
+                <option>Beauty Services</option>
+                <option>Barber Services</option>
+                <option>Massage Services</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <select class="form-select" name="service_name" required>
+                <option selected disabled>Choose Service</option>
+                <option>Braiding</option>
+                <option>Facial</option>
+                <option>Spa Therapy</option>
+                <option>Lash Installation</option>
+                <option>Swedish Massage</option>
+                <option>Deep Tissue Massage</option>
+                <option>Aromatherapy Massage</option>
+                <option>Manicure & Pedicure</option>
+                <option>Precision Haircut</option>
+                <option>Beard Grooming</option>
+                <option>Hot Towel Shave</option>
+              </select>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="col-12">
+              <textarea class="form-control" name="special_requests" rows="4" placeholder="Special Requests"></textarea>
+            </div>
+
+            <!-- Spam protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+            <!-- Submit Button -->
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-custom">Confirm Booking</button>
+            </div>
+          </form>
+
+          <!-- Status message -->
+          <div id="formStatus" class="mt-3 text-center"></div>
+
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Testimonials -->
   <section id="testimonials" class="py-5">
@@ -1295,14 +1323,14 @@ background: linear-gradient(
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p>"The spa experience was heavenly! I felt so relaxed and pampered. The ambiance and service were exceptional. Definitely coming back."</p>
+            <p>" Such a calming experience,the spa experience was heavenly! I felt so relaxed and pampered. The ambiance and service were exceptional a perfect escape after a long week. Definitely coming back."</p>
             <div class="d-flex align-items-center mt-4">
               <div class="testimonial-avatar">
-                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client">
+                <img src="/images/man review 3.jpg" alt="Client">
               </div>
               <div>
-                <strong>Michelle W.</strong>
-                <p class="mb-0">Nairobi</p>
+                <strong>Micheal W.</strong>
+                <p class="mb-0">Mirema</p>
               </div>
             </div>
           </div>
@@ -1316,14 +1344,14 @@ background: linear-gradient(
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p>"Best massage I've ever had! The therapist was incredibly skilled and the ambiance was so relaxing. I left feeling completely renewed."</p>
+            <p>"I absolutely love my braids! The stylist was gentle and creative, and the finish looks so neat. I’ve gotten so many compliments already. Definitely my go-to place for braiding."</p>
             <div class="d-flex align-items-center mt-4">
               <div class="testimonial-avatar">
-                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client">
+                <img src="/images/girl review 1.jpg" alt="Client">
               </div>
               <div>
                 <strong>Sarah K.</strong>
-                <p class="mb-0">Westlands</p>
+                <p class="mb-0">Zimmerman</p>
               </div>
             </div>
           </div>
@@ -1337,14 +1365,14 @@ background: linear-gradient(
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <p>"I booked a massage session and it was worth every coin. The therapist was professional and the facility was clean and luxurious. Highly recommend Luxury Royale 254."</p>
+            <p>""Professional and precise! My beard has never looked this clean and sharp. They really pay attention to detail, and the service is top-notch. Highly recommend for any gentleman who values grooming."</p>
             <div class="d-flex align-items-center mt-4">
               <div class="testimonial-avatar">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                <img src="/images/man review 2.jpg" alt="Client">
               </div>
               <div>
-                <strong>Janet M.</strong>
-                <p class="mb-0">Kilimani</p>
+                <strong>John M.</strong>
+                <p class="mb-0">Lumumba Drive</p>
               </div>
             </div>
           </div>
@@ -1381,7 +1409,7 @@ background: linear-gradient(
               <div class="contact-info">
                 <i class="fas fa-envelope fa-2x mb-3" style="color: var(--gold);"></i>
                 <h5>Email</h5>
-                <p>info@luxuryroyale254.com</p>
+                <p>info@luxeroyale254beauty&barberlounge254.com</p>
               </div>
             </div>
           </div>
@@ -1396,8 +1424,8 @@ background: linear-gradient(
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4 mb-lg-0">
-          <h3 class="footer-brand">Luxury <span>Royale 254</span></h3>
-          <p class="mt-3">Luxury Beauty & Barber Lounge offering premium services in a sophisticated environment.</p>
+          <h3 class="footer-brand">Luxe <span>Royale 254</span></h3>
+          <p class="mt-3">Luxe Royale 254 Beauty & Barber Lounge offering premium services in a sophisticated environment.</p>
           <div class="social-icons mt-4">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1410,7 +1438,7 @@ background: linear-gradient(
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href#services">Services</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Gallery</a></li>
           </ul>
         </div>
@@ -1433,7 +1461,7 @@ background: linear-gradient(
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 Luxury Royale 254 Beauty & Barber Lounge | Designed by Getrude Kipkemoi with ♥</p>
+        <p>&copy; 2025 Luxe Royale 254 Beauty & Barber Lounge | Designed by Getrude Kipkemoi with ♥</p>
       </div>
     </div>
   </footer>
@@ -1519,6 +1547,122 @@ background: linear-gradient(
         animateCounter();
       }, 500);
     });
+
+    
+// <!-- Script for handling response -->
+  // const form = document.getElementById("bookingForm");
+  // const statusDiv = document.getElementById("formStatus");
+
+  // form.addEventListener("submit", async function(e) {
+  //   e.preventDefault();
+
+  //   const formData = new FormData(form);
+  //   const object = Object.fromEntries(formData);
+  //   const json = JSON.stringify(object);
+
+  //   statusDiv.innerHTML = "⏳ Sending your booking...";
+
+  //   try {
+  //     const res = await fetch(form.action, {
+  //       method: form.method,
+  //       headers: { "Content-Type": "application/json", "Accept": "application/json" },
+  //       body: json
+  //     });
+
+  //     const data = await res.json();
+
+  //     if (data.success) {
+  //       statusDiv.innerHTML = "<span style='color:green; font-weight:bold;'>✅ Booking confirmed! We will contact you shortly.</span>";
+  //       form.reset();
+  //     } else {
+  //       statusDiv.innerHTML = "<span style='color:red; font-weight:bold;'>❌ Something went wrong. Please try again.</span>";
+  //     }
+  //   } catch (error) {
+  //     statusDiv.innerHTML = "<span style='color:red; font-weight:bold;'>⚠️ Network error. Please check your connection.</span>";
+  //   }
+  // });
+
+  
+// <!-- Script for handling Web3Forms response -->
+
+  // const form = document.getElementById("bookingForm");
+  // const statusDiv = document.getElementById("formStatus");
+
+  // form.addEventListener("submit", async function(e) {
+  //   e.preventDefault();
+
+  //   const formData = new FormData(form);
+  //   const object = Object.fromEntries(formData);
+  //   const json = JSON.stringify(object);
+
+  //   statusDiv.innerHTML = "⏳ Sending your booking...";
+
+  //   try {
+  //     const res = await fetch(form.action, {
+  //       method: form.method,
+  //       headers: { "Content-Type": "application/json", "Accept": "application/json" },
+  //       body: json
+  //     });
+
+  //     const data = await res.json();
+
+  //     if (data.success) {
+  //       statusDiv.innerHTML = "<span style='color:green; font-weight:bold;'>✅ Booking confirmed! We will contact you shortly.</span>";
+  //       form.reset();
+  //     } else {
+  //       statusDiv.innerHTML = "<span style='color:red; font-weight:bold;'>❌ Something went wrong. Please try again.</span>";
+  //     }
+  //   } catch (error) {
+  //     statusDiv.innerHTML = "<span style='color:red; font-weight:bold;'>⚠️ Network error. Please check your connection.</span>";
+  //   }
+  // });
+
+  
+  // Auto-fill booking time
+  document.getElementById("booking_time").value = new Date().toLocaleString();
+
+  const form = document.getElementById("bookingForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    formData.set("booking_time", new Date().toLocaleString()); // always update real-time
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Booking Confirmed!",
+          text: "We’ve received your booking and will contact you shortly.",
+          confirmButtonColor: "#6c757d"
+        });
+        form.reset();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops!",
+          text: "Something went wrong. Please try again later.",
+          confirmButtonColor: "#d33"
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "Please check your connection and try again.",
+        confirmButtonColor: "#d33"
+      });
+    }
+  });
+
   </script>
 </body>
 </html>
